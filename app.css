@@ -1,0 +1,92 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+}
+html{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+.ghost{
+    width: 100px;
+    height: 120px;
+    background-color: white;
+    margin:100px auto 0;
+    border-radius: 100px 100px 0 0 ;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: ghost 1.5s linear alternate infinite;
+}
+.ghost::after{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 0 0 20px 20px;
+    background-color: white;
+    bottom: -10px;
+    left: 0;
+    box-shadow: 20px 0 0 0 white,40px 0 0 0 white, 60px 0 0 0 white, 80px 0 0 0 white;
+}
+.ghost::before{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 100px;
+    background-color: white;
+    bottom: 50px;
+    left: -10px;
+    box-shadow: 100px 0 0 0 white;
+}
+.ghost-body::before{
+    content: "Vi ơi Vi !!!";
+    position: absolute;
+    width: 80px;
+    height: 18px;
+    background-color: #fff;
+    top: -25px;
+    left: 40%;
+    color: rgb(25, 36, 139);
+    text-align: center;
+    border-radius: 20px;
+}
+.ghost-body{
+    width: 100%;
+    max-width: 50%;
+    height: 50px;
+   
+}
+.ghost-eye{
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color:#191a2e;
+    box-shadow: 30px 0 0 0#191a2e;
+}
+.ghost-mouth{
+    width: 100%;
+    max-width: 80%;
+    height: 20px;
+    margin: 15px auto 0 ;
+    background-color: #191a2e;
+    border-radius: 0 0 100px 100px;
+    position: relative;
+
+}
+.ghost-mouth::after{
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 8px;
+    background-color: white;
+    top: -2px;
+    left: 4px;
+}
+@keyframes ghost{
+    to{
+        transform: translateY(50%);
+    }
+}
